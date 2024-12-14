@@ -55,6 +55,19 @@ def predict_gpu_output(
         strict_dep_list=pkg_versions
     )
 
+    # Print out all parameters
+    print("Predict Method Parameters:")
+    print(f"workflow_input: {workflow}")
+    print(f"file_path_list: {file_path_list}")
+    print(f"stop_server_after_completion: {False}")
+    print(f"output_node_ids: {output_node}")
+    print(f"extra_models_list: {extra_model_list}")
+    print(f"ignore_model_list: {ignore_model_list}")
+    print(f"client_id: {log_tag}")
+    print(f"extra_node_urls: {extra_node_urls}")
+    print(f"comfy_commit_hash: {comfy_commit_hash}")
+    print(f"strict_dep_list: {pkg_versions}")
+
     return output["file_paths"]  # ignoring text output for now {"file_paths": [], "text_content": []}
 
 
