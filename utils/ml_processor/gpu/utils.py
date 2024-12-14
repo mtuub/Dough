@@ -22,6 +22,12 @@ def predict_gpu_output(
     ignore_model_list=[],
     log_tag=None,
 ) -> str:
+    print("///////////////////////////////////////////////////////////")
+    print("///////////////////////////////////////////////////////////")
+    print("///////////////////////////////////////////////////////////")
+    print("///////////////////////////////////////////////////////////")
+    print("///////////////////////////////////////////////////////////")
+    
     # spec = importlib.util.spec_from_file_location('my_module', f'{COMFY_RUNNER_PATH}/inf.py')
     # comfy_runner = importlib.util.module_from_spec(spec)
     # spec.loader.exec_module(comfy_runner)
@@ -41,8 +47,7 @@ def predict_gpu_output(
         v["title"] = k
         extra_node_urls.append(v)
 
-    comfy_runner = ComfyRunner()
-        # Print out all parameters
+            # Print out all parameters
     print("Predict Method Parameters:")
     print(f"workflow_input: {workflow}")
     print(f"file_path_list: {file_path_list}")
@@ -54,6 +59,9 @@ def predict_gpu_output(
     print(f"extra_node_urls: {extra_node_urls}")
     print(f"comfy_commit_hash: {comfy_commit_hash}")
     print(f"strict_dep_list: {pkg_versions}")
+
+    comfy_runner = ComfyRunner()
+
     
     output = comfy_runner.predict(
         workflow_input=workflow,
